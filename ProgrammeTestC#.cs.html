@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>UnitTest1.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #c792ea; font-style: italic;}
+.s1 { color: #c3cee3;}
+.s2 { color: #89ddff;}
+.s3 { color: #546e7a; font-style: italic;}
+.s4 { color: #c3e88d;}
+.s5 { color: #f78c6c;}
+</style>
+</head>
+<body bgcolor="#263238">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+UnitTest1.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">using </span><span class="s1">System</span><span class="s2">;</span>
+
+<span class="s3">//*********************************//</span>
+<span class="s3">//Programme C# pour le Prosit N°2  //</span>
+<span class="s3">//Bloc Systèmes embarqués 2024-25  //</span>
+<span class="s3">//Fait par julian Kerignard        //</span>
+<span class="s3">//CESI Ecole D'ingenieur Nancy     //</span>
+<span class="s3">//IDE JetBrain Rider               //</span>
+<span class="s3">//*********************************//</span>
+
+<span class="s0">class </span><span class="s1">FibonacciProgram</span>
+<span class="s2">{</span>
+    <span class="s0">static void </span><span class="s1">Main</span><span class="s2">(</span><span class="s0">string</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">)</span>
+    <span class="s2">{</span>
+        <span class="s1">Console</span><span class="s2">.</span><span class="s1">WriteLine</span><span class="s2">(</span><span class="s4">&quot;Suite de Fibonacci :&quot;</span><span class="s2">);</span>
+        
+        <span class="s0">int </span><span class="s1">n </span><span class="s2">= </span><span class="s5">10</span><span class="s2">; </span><span class="s3">// nombre d'itérations a calculer </span>
+        
+        <span class="s3">// Methode itérative</span>
+        <span class="s1">Console</span><span class="s2">.</span><span class="s1">WriteLine</span><span class="s2">(</span><span class="s4">&quot;\nitérative :&quot;</span><span class="s2">);</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s5">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">n</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++)</span>
+        <span class="s2">{</span>
+            <span class="s1">Console</span><span class="s2">.</span><span class="s1">Write</span><span class="s2">(</span><span class="s1">FibonacciIterative</span><span class="s2">(</span><span class="s1">i</span><span class="s2">) + </span><span class="s4">&quot; &quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+        
+        <span class="s3">// Affichage récursive</span>
+        <span class="s1">Console</span><span class="s2">.</span><span class="s1">WriteLine</span><span class="s2">(</span><span class="s4">&quot;\n\nrécursive :&quot;</span><span class="s2">);</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s5">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">n</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++)</span>
+        <span class="s2">{</span>
+            <span class="s1">Console</span><span class="s2">.</span><span class="s1">Write</span><span class="s2">(</span><span class="s1">FibonacciRecursive</span><span class="s2">(</span><span class="s1">i</span><span class="s2">) + </span><span class="s4">&quot; &quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+    
+    <span class="s3">//itérative calculer Fibonacci</span>
+    <span class="s0">static int </span><span class="s1">FibonacciIterative</span><span class="s2">(</span><span class="s0">int </span><span class="s1">n</span><span class="s2">)</span>
+    <span class="s2">{</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">n </span><span class="s2">== </span><span class="s5">0</span><span class="s2">) </span><span class="s0">return </span><span class="s5">0</span><span class="s2">;</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">n </span><span class="s2">== </span><span class="s5">1</span><span class="s2">) </span><span class="s0">return </span><span class="s5">1</span><span class="s2">;</span>
+
+        <span class="s0">int </span><span class="s1">a </span><span class="s2">= </span><span class="s5">0</span><span class="s2">;</span>
+        <span class="s0">int </span><span class="s1">b </span><span class="s2">= </span><span class="s5">1</span><span class="s2">;</span>
+        <span class="s0">int </span><span class="s1">fib </span><span class="s2">= </span><span class="s5">0</span><span class="s2">;</span>
+
+        <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s5">2</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt;= </span><span class="s1">n</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++)</span>
+        <span class="s2">{</span>
+            <span class="s1">fib </span><span class="s2">= </span><span class="s1">a </span><span class="s2">+ </span><span class="s1">b</span><span class="s2">;</span>
+            <span class="s1">a </span><span class="s2">= </span><span class="s1">b</span><span class="s2">;</span>
+            <span class="s1">b </span><span class="s2">= </span><span class="s1">fib</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s0">return </span><span class="s1">fib</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s3">//récursive pour calculer Fibonacci</span>
+    <span class="s0">static int </span><span class="s1">FibonacciRecursive</span><span class="s2">(</span><span class="s0">int </span><span class="s1">n</span><span class="s2">)</span>
+    <span class="s2">{</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">n </span><span class="s2">== </span><span class="s5">0</span><span class="s2">) </span><span class="s0">return </span><span class="s5">0</span><span class="s2">;</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">n </span><span class="s2">== </span><span class="s5">1</span><span class="s2">) </span><span class="s0">return </span><span class="s5">1</span><span class="s2">;</span>
+
+        <span class="s0">return </span><span class="s1">FibonacciRecursive</span><span class="s2">(</span><span class="s1">n </span><span class="s2">- </span><span class="s5">1</span><span class="s2">) + </span><span class="s1">FibonacciRecursive</span><span class="s2">(</span><span class="s1">n </span><span class="s2">- </span><span class="s5">2</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
